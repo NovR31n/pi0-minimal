@@ -18,7 +18,8 @@ advances over Student-v2 overall.
 - Checkpoint: `artifacts/STUDENT-V3-CORRECTION-SUCCESS39-10K-S7-015/step_10000.pt`.
 - Matrix: LIBERO Spatial tasks 0--9, initial-state indices 0--49.
 - Protocol: training seed 7, evaluation seed offset 1000, 220 maximum steps,
-  10 wait steps, 5-step replanning, 256-pixel observations, CUDA.
+  10 wait steps, 5-step replanning, 20-step Euler action sampling, 256-pixel
+  observations, CUDA.
 - Result directory: `results/STUDENT-V3-SUCCESS39-10K-S7-R5-500-018`.
 - All 500 `(task_id, init_state_index)` identities are unique and complete.
 - All records use checkpoint step 10K and the frozen rollout protocol; all report

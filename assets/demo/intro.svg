@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640">
+  <rect width="640" height="640" fill="#0f172a"/>
+  <rect x="250" y="120" width="140" height="8" rx="4" fill="#2dd4bf"/>
+  <text x="320" y="225" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="52" font-weight="700" fill="#ffffff">pi0-minimal</text>
+  <text x="320" y="280" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="25" fill="#94a3b8">Compact VLA on LIBERO Spatial</text>
+  <text x="320" y="345" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="25" font-weight="600" fill="#2dd4bf">4 successful closed-loop rollouts</text>
+  <text x="320" y="405" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="24" fill="#ffffff">Student-v3  |  319 / 500  (63.8%)</text>
+  <text x="320" y="505" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#64748b">Independent compact π0-style implementation</text>
+</svg>

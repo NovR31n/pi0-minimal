@@ -24,7 +24,7 @@ commit: 3e0325a
 | Flow interpolation | `τA+(1-τ)ε` | reverse-time equivalent | paper convention |
 | Flow target | `A-ε` | reverse-time `ε-A` | paper convention |
 | Time sampling | shifted Beta, noisy times emphasized | `Beta(1.5,1)*0.999+0.001` in reverse time | `0.999*(1-Beta(1.5,1))` |
-| Sampling | forward Euler, 10 steps | reverse-time Euler, default 10 | forward Euler, default 10 |
+| Sampling | forward Euler, 10 steps | reverse-time Euler, default 10 | forward Euler, formal config 20 |
 | Action horizon | 50 in paper tasks | default 50; π0.5 LIBERO config 10 | 10 |
 | Action dimension | embodiment-dependent | padded default 32 | native LIBERO 7 |
 | KV caching | prefix cached | `sample_actions` caches prefix | condition memory cached |

@@ -50,7 +50,7 @@ Flow and AR share:
 Only the generation mechanism differs:
 
 - flow uses noisy actions, continuous flow time, bidirectional action
-  attention, velocity MSE, and ten Euler steps;
+  attention, velocity MSE, and 20 Euler steps in the formal configuration;
 - AR uses shifted previous actions, causal attention, Gaussian NLL, and ten
   sequential next-action predictions.
 

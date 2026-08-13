@@ -13,6 +13,7 @@ def test_public_result_summary_is_internally_consistent() -> None:
     result = summary["student_v3"]
     paired = summary["paired_comparison_to_student_v2"]
 
+    assert summary["protocol"]["euler_steps"] == 20
     assert result["successes"] + result["failures"] == result["episodes"] == 500
     assert result["success_rate"] == result["successes"] / result["episodes"]
     assert sum(

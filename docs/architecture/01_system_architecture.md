@@ -55,7 +55,7 @@ flow time τ [B]                             │
                               velocity v_θ [B, 10, 7]
                                            │
                  training ─────────────────┴──────────── inference
-                 target A-ε                              10 Euler steps
+                 target A-ε                              20 Euler steps (formal config)
                  masked MSE                              ε → action chunk
 ```
 

@@ -17,6 +17,7 @@
     "max_steps": 220,
     "wait_steps": 10,
     "replan_steps": 5,
+    "euler_steps": 20,
     "observation_resolution": 256,
     "device": "cuda"
   },

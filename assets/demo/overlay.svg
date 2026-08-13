@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640">
+  <g font-family="DejaVu Sans, sans-serif" fill="#ffffff">
+    <rect x="0" y="0" width="320" height="38" fill="#000000" fill-opacity="0.72"/>
+    <text x="10" y="25" font-size="18" font-weight="600">Task 0 | between objects</text>
+    <rect x="320" y="0" width="320" height="38" fill="#000000" fill-opacity="0.72"/>
+    <text x="330" y="25" font-size="18" font-weight="600">Task 3 | on cookie box</text>
+    <rect x="0" y="320" width="320" height="38" fill="#000000" fill-opacity="0.72"/>
+    <text x="10" y="345" font-size="18" font-weight="600">Task 4 | inside cabinet</text>
+    <rect x="320" y="320" width="320" height="38" fill="#000000" fill-opacity="0.72"/>
+    <text x="330" y="345" font-size="18" font-weight="600">Task 7 | on stove</text>
+    <rect x="0" y="280" width="320" height="40" fill="#0f766e" fill-opacity="0.88"/>
+    <text x="160" y="307" text-anchor="middle" font-size="20" font-weight="700">SUCCESS</text>
+    <rect x="320" y="280" width="320" height="40" fill="#0f766e" fill-opacity="0.88"/>
+    <text x="480" y="307" text-anchor="middle" font-size="20" font-weight="700">SUCCESS</text>
+    <rect x="0" y="600" width="320" height="40" fill="#0f766e" fill-opacity="0.88"/>
+    <text x="160" y="627" text-anchor="middle" font-size="20" font-weight="700">SUCCESS</text>
+    <rect x="320" y="600" width="320" height="40" fill="#0f766e" fill-opacity="0.88"/>
+    <text x="480" y="627" text-anchor="middle" font-size="20" font-weight="700">SUCCESS</text>
+  </g>
+</svg>

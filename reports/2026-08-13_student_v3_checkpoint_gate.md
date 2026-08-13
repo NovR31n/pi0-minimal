@@ -6,7 +6,8 @@
 - Candidate checkpoints: step 2K, step 5K, best-generation step 9K, and step 10K.
 - Panel: LIBERO Spatial tasks 0--9, initial-state indices 10--19.
 - Protocol: training seed 7, evaluation seed offset 1000, 220 maximum steps,
-  10 wait steps, 5-step replanning, 256-pixel observations, CUDA.
+  10 wait steps, 5-step replanning, 20-step Euler action sampling, 256-pixel
+  observations, CUDA.
 - Selection rule: choose the checkpoint with the greatest total success count over
   all 100 frozen episodes. No per-task tuning or post-validation reselection.
 

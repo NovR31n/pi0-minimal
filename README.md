@@ -20,6 +20,14 @@ and machine-readable result summaries.
 [Architecture](docs/architecture/) ·
 [Release](https://github.com/NovR31n/pi0-minimal/releases/latest)
 
+## Demo
+
+[![Four successful Student-v3 closed-loop LIBERO rollouts](assets/demo/student_v3_demo.gif)](assets/demo/student_v3_demo.mp4)
+
+Four representative successful rollouts from the frozen 500-episode evaluation.
+The montage shows selected successes rather than an estimated success rate;
+the complete result is 319/500. Click the preview for the higher-quality MP4.
+
 ![Student policy progression from 21.6 to 63.8 percent](assets/results_progression.svg)
 
 ## Highlights
@@ -72,7 +80,8 @@ The compact Flow policy uses:
 - an eight-layer, width-512 action expert with bidirectional self-attention and
   cross-attention to cached vision-language context;
 - ten 7D action tokens trained with a masked flow-matching objective;
-- ten Euler integration steps at inference time.
+- twenty Euler integration steps at inference time in the committed formal
+  configuration.
 
 The trainable policy is approximately 44M parameters. A matched continuous
 autoregressive baseline shares the observation encoder, state conditioning,
@@ -81,7 +90,8 @@ attention, and objective contracts live in [`docs/architecture`](docs/architectu
 
 ## Why Student-v3 improves
 
-Student-v3 continues from the accepted Student-v2 checkpoint with three
+Student-v3 continues from Student-v2's retained generation-best checkpoint
+with three
 independently balanced sources:
 
 - 50% all-task LIBERO demonstrations;

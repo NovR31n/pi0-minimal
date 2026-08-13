@@ -72,9 +72,10 @@ for k in 0,...,N-1:
 predicted normalized action = x_N
 ```
 
-The default is `N=10`, matching the π0 paper. The same cached condition memory
-is reused at every integration step. No stochastic noise is added after
-initialization.
+The implementation default is `N=10`, matching the π0 paper. The committed
+formal LIBERO configuration explicitly overrides it to `N=20`. The same cached
+condition memory is reused at every integration step. No stochastic noise is
+added after initialization.
 
 The sampler accepts an optional caller-provided initial noise tensor. Formal
 latency and sampling-step ablations reuse fixed noise seeds.

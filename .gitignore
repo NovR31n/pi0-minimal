@@ -26,6 +26,7 @@ results/*
 wandb/
 *.log
 *.mp4
+!assets/demo/student_v3_demo.mp4
 *.pt
 *.pth
 *.ckpt

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640">
+  <rect width="640" height="640" fill="#0f172a"/>
+  <text x="320" y="195" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="45" font-weight="700" fill="#ffffff">Student-v3</text>
+  <text x="320" y="270" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="30" font-weight="700" fill="#2dd4bf">63.8% success on 500 rollouts</text>
+  <text x="320" y="330" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="25" fill="#ffffff">+14.0 points vs Student-v2</text>
+  <line x1="160" y1="380" x2="480" y2="380" stroke="#334155" stroke-width="2"/>
+  <text x="320" y="425" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#94a3b8">LIBERO simulation | single training seed</text>
+  <text x="320" y="485" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="20" fill="#94a3b8">github.com/NovR31n/pi0-minimal</text>
+</svg>

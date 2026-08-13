@@ -104,9 +104,9 @@ bash scripts/run_student_v3_formal_500.sh
 The final launcher checks that the untouched 90-episode gate passed before it
 evaluates the frozen step-10K checkpoint. The formal matrix covers task IDs
 0–9 and initial-state IDs 0–49 with seed offset 1000, 220 maximum steps, 10
-initial wait steps, five-step replanning, and 256-pixel observations. It audits
-the identities and checkpoint metadata of reused frozen-panel episodes before
-continuing the matrix.
+initial wait steps, five-step replanning, 20-step Euler action sampling, and
+256-pixel observations. It audits the identities and checkpoint metadata of
+reused frozen-panel episodes before continuing the matrix.
 
 Aggregate a result directory with:
 

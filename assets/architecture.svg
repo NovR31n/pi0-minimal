@@ -69,5 +69,5 @@
   <path d="M1040 292 H1072" class="line"/>
   <text x="1073" y="278" text-anchor="end" class="small">10 × 7</text>
   <text x="1073" y="316" text-anchor="end" class="small">actions</text>
-  <text x="550" y="516" text-anchor="middle" class="subtitle">Flow matching during training · 10 Euler integration steps during inference</text>
+  <text x="550" y="516" text-anchor="middle" class="subtitle">Flow matching during training · 20 Euler integration steps in the formal configuration</text>
 </svg>
