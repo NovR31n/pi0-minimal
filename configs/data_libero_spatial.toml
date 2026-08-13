@@ -1,0 +1,28 @@
+schema_version = 1
+dataset_id = "local/libero_spatial_no_noops_lerobot"
+source_format = "lerobot_v2.1"
+
+[split]
+seed = 7
+validation_fraction = 0.1
+
+[state]
+source_dim = 8
+model_dim = 7
+conversion = "ee_pose_6_plus_left_minus_right_finger"
+
+[action]
+dim = 7
+horizon = 10
+gripper_index = 6
+gripper_min = -1.0
+gripper_max = 1.0
+
+[normalization]
+kind = "quantile"
+lower_quantile = 0.01
+upper_quantile = 0.99
+
+[smoke]
+episodes = [0, 1]
+samples_per_episode = 8

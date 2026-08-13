@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pi0-minimal"
+version = "0.1.0"
+description = "Independent compact pi0-style VLA research implementation"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy==1.26.4",
+    "torch==2.7.1",
+    "transformers==4.53.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8",
+    "ruff>=0.5",
+]
+libero = [
+    "bddl==1.0.1",
+    "easydict==1.9",
+    "future==0.18.2",
+    "gym==0.25.2",
+    "h5py>=3.12,<4",
+    "imageio>=2.35",
+    "imageio-ffmpeg>=0.5",
+    "matplotlib>=3.10,<4",
+    "mujoco==2.3.7",
+    "opencv-python==4.11.0.86",
+    "robosuite==1.4.1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"

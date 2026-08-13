@@ -1,0 +1,44 @@
+schema_version = 1
+name = "flow_tiny_libero"
+backend = "pytorch"
+compute_dtype = "bfloat16"
+loss_dtype = "float32"
+
+[observation]
+image_keys = ["base_0_rgb", "wrist_0_rgb"]
+image_height = 224
+image_width = 224
+image_channels = 3
+max_prompt_tokens = 64
+state_dim = 7
+
+[action]
+dim = 7
+horizon = 10
+
+[backbone]
+model_id = "google/paligemma-3b-pt-224"
+revision = "35e4f46485b4d07967e7e9935bc3786aad50687c"
+output_dim = 2048
+frozen = true
+license_acceptance_required = true
+
+[action_expert]
+model_dim = 512
+num_layers = 8
+num_heads = 8
+head_dim = 64
+ffn_dim = 2048
+time_embedding_dim = 128
+position_embedding = "learned"
+dropout = 0.0
+activation = "swiglu"
+
+[flow]
+convention = "data_at_one"
+time_distribution = "paper_shifted_beta"
+beta_alpha = 1.5
+beta_beta = 1.0
+cutoff = 0.999
+num_euler_steps = 20
+smoothness_weight = 0.05

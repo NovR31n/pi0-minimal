@@ -1,0 +1,478 @@
+schema_version = 1
+
+[[experiments]]
+id = "P0-SCAFFOLD-001"
+status = "complete"
+purpose = "Verify repository scaffolding, the isolated Python environment, and development checks."
+code_commit = "0609ae1"
+config = "pyproject.toml"
+artifact_dir = "artifacts/P0-SCAFFOLD-001"
+seeds = []
+
+[[experiments]]
+id = "FM-SMOKE-PALIGEMMA-001"
+status = "complete"
+purpose = "Validate the pinned frozen PaliGemma checkpoint on a real LIBERO sample with CUDA."
+code_commit = "27d16bc"
+config = "configs/model_flow_tiny.toml"
+artifact_dir = "artifacts/FM-SMOKE-PALIGEMMA-001"
+seeds = []
+
+[[experiments]]
+id = "FM-SMOKE-FLOW-STACK-001"
+status = "complete"
+purpose = "Validate the frozen PaliGemma and complete trainable flow stack forward/backward memory budget."
+code_commit = "dbc4634"
+config = "configs/model_flow_tiny.toml"
+artifact_dir = "artifacts/FM-SMOKE-FLOW-STACK-001"
+seeds = [7]
+
+[[experiments]]
+id = "FM-SMOKE-OVERFIT-001"
+status = "complete"
+purpose = "Require the complete flow policy to overfit one fixed problem from a real LIBERO sample."
+code_commit = "7e1d9dc"
+config = "configs/model_flow_tiny.toml"
+artifact_dir = "artifacts/FM-SMOKE-OVERFIT-001"
+seeds = [7]
+
+[[experiments]]
+id = "FM-SMOKE-SMALL-TRAIN-001"
+status = "complete"
+purpose = "Train on one real episode and evaluate a fixed flow problem on a disjoint validation episode."
+code_commit = "6c926e6"
+config = "configs/model_flow_tiny.toml"
+artifact_dir = "artifacts/FM-SMOKE-SMALL-TRAIN-001"
+seeds = [7]
+
+[[experiments]]
+id = "FM-SMOKE-ROLLOUT-001"
+status = "complete"
+purpose = "Run the independent flow policy for one complete 220-step closed-loop LIBERO episode."
+code_commit = "6c926e6"
+config = "configs/model_flow_tiny.toml"
+artifact_dir = "artifacts/FM-SMOKE-ROLLOUT-001"
+seeds = [7]
+
+[[experiments]]
+id = "AR-SMOKE-OVERFIT-LR3E5-001"
+status = "complete"
+purpose = "Require the continuous AR policy to fit action means on one fixed real LIBERO sample."
+code_commit = "ccd820d"
+config = "configs/model_ar_tiny.toml"
+artifact_dir = "artifacts/AR-SMOKE-OVERFIT-LR3E5-001"
+seeds = [7]
+
+[[experiments]]
+id = "AR-SMOKE-SMALL-TRAIN-001"
+status = "complete"
+purpose = "Train the AR baseline on the same episode-disjoint real LIBERO subset and budget as flow."
+code_commit = "ccd820d"
+config = "configs/model_ar_tiny.toml"
+artifact_dir = "artifacts/AR-SMOKE-SMALL-TRAIN-001"
+seeds = [7]
+
+[[experiments]]
+id = "AR-SMOKE-ROLLOUT-001"
+status = "complete"
+purpose = "Run the trained AR baseline for one complete matched 220-step closed-loop LIBERO episode."
+code_commit = "ccd820d"
+config = "configs/model_ar_tiny.toml"
+artifact_dir = "artifacts/AR-SMOKE-ROLLOUT-001"
+seeds = [7]
+
+[[experiments]]
+id = "P5-METRICS-SMOKE-001"
+status = "complete"
+purpose = "Validate unified smoothness, trajectory, runtime, confidence-interval, and paired aggregation metrics."
+code_commit = "9dca132"
+config = "docs/evaluation_protocol.md"
+artifact_dir = "results"
+seeds = [7]
+
+[[experiments]]
+id = "FM-PILOT-3TASK-S7-001"
+status = "complete"
+purpose = "Train the flow policy on three tasks with episode-disjoint validation for pilot stability."
+code_commit = "5d00a7d"
+config = "configs/model_flow_tiny.toml"
+artifact_dir = "artifacts/FM-PILOT-3TASK-S7-001"
+seeds = [7]
+
+[[experiments]]
+id = "AR-PILOT-3TASK-S7-001"
+status = "complete"
+purpose = "Train the matched AR policy on the same three-task pilot data and optimization budget."
+code_commit = "5d00a7d"
+config = "configs/model_ar_tiny.toml"
+artifact_dir = "artifacts/AR-PILOT-3TASK-S7-001"
+seeds = [7]
+
+[[experiments]]
+id = "P6-PILOT-3TASK-ROLLOUT-S7-001"
+status = "complete"
+purpose = "Evaluate both three-task pilot checkpoints on three paired validation initial states."
+code_commit = "5d00a7d"
+config = "docs/evaluation_protocol.md"
+artifact_dir = "results"
+seeds = [7]
+
+[[experiments]]
+id = "TEACHER-COLLECT-SMOKE-001"
+status = "complete"
+purpose = "Validate one atomic official pi05_libero teacher episode for offline distillation."
+code_commit = "0e77db6"
+config = "docs/data.md"
+artifact_dir = "artifacts/TEACHER-COLLECT-SMOKE-001"
+seeds = [1000]
+
+[[experiments]]
+id = "STUDENT-V1-DISTILL-SMOKE-001"
+status = "complete"
+purpose = "Continue the accepted Flow student on a source-balanced demonstration and official-teacher mixture."
+code_commit = "323270e"
+config = "configs/model_flow_tiny.toml"
+artifact_dir = "artifacts/STUDENT-V1-DISTILL-SMOKE-001"
+seeds = [7]
+
+[[experiments]]
+id = "TEACHER-COLLECT-BALANCED100-001"
+status = "complete"
+purpose = "Collect exactly ten successful official pi05_libero trajectories for each LIBERO Spatial task."
+code_commit = "158b00a"
+config = "docs/data.md"
+artifact_dir = "artifacts/TEACHER-COLLECT-BALANCED100-001"
+seeds = [1000]
+
+[[experiments]]
+id = "STUDENT-V1-DISTILL-BAL100-PREFLIGHT-001"
+status = "complete"
+purpose = "Validate full demonstration and balanced-teacher caching and training at production batch size."
+code_commit = "63fdcd8"
+config = "configs/model_flow_tiny.toml"
+artifact_dir = "artifacts/STUDENT-V1-DISTILL-BAL100-PREFLIGHT-001"
+seeds = [7]
+
+[[experiments]]
+id = "STUDENT-V1-DISTILL-BAL100-10K-S7-001"
+status = "complete"
+purpose = "Continue the accepted Flow student for 10K steps with source- and teacher-task-balanced distillation."
+code_commit = "d961112"
+config = "configs/model_flow_tiny.toml"
+artifact_dir = "artifacts/STUDENT-V1-DISTILL-BAL100-10K-S7-001"
+seeds = [7]
+
+[[experiments]]
+id = "STUDENT-V1-DISTILL-PAIRED10-R5-001"
+status = "complete"
+purpose = "Gate formal evaluation with one paired initial state on each Spatial task for original and distilled students."
+code_commit = "d961112"
+config = "docs/evaluation_protocol.md"
+artifact_dir = "results"
+seeds = [7]
+
+[[experiments]]
+id = "STUDENT-V1-DISTILL-BAL100-R5-500-001"
+status = "complete"
+purpose = "Evaluate the distilled student on all ten Spatial tasks with 50 initial states per task and replan five."
+code_commit = "d961112"
+config = "docs/evaluation_protocol.md"
+artifact_dir = "results/STUDENT-V1-DISTILL-BAL100-10K-S7-001-R5-500"
+seeds = [7]
+
+[[experiments]]
+id = "P6-FLOW-ENVTASKS03478-ALL214-10K-S7-R5-500-001"
+status = "complete"
+purpose = "Evaluate the unchanged demonstration-only Flow student on the same ten-task 500-episode protocol as Student-v1."
+code_commit = "d961112"
+config = "docs/evaluation_protocol.md"
+artifact_dir = "results/P6-FLOW-ENVTASKS03478-ALL214-64-S7-STATE-NOISE05-10K-001-R5-500"
+seeds = [7]
+
+[[experiments]]
+id = "STUDENT-V1-DISTILL-BAL100-2K-S7-R5-DEV100-001"
+status = "complete"
+purpose = "Screen the retained 2K distillation snapshot on ten declared development initial states per Spatial task."
+code_commit = "029f678"
+config = "docs/evaluation_protocol.md"
+artifact_dir = "results/STUDENT-V1-DISTILL-BAL100-2K-S7-R5-DEV100-001"
+seeds = [7]
+
+[[experiments]]
+id = "STUDENT-V1-DISTILL-BAL100-5K-S7-R5-DEV100-001"
+status = "complete"
+purpose = "Screen the retained 5K distillation snapshot on ten declared development initial states per Spatial task."
+code_commit = "029f678"
+config = "docs/evaluation_protocol.md"
+artifact_dir = "results/STUDENT-V1-DISTILL-BAL100-5K-S7-R5-DEV100-001"
+seeds = [7]
+
+[[experiments]]
+id = "STUDENT-V2-ALL10-DEMO-PREFLIGHT-S7-001"
+status = "complete"
+purpose = "Validate all-ten-task demonstration-only caching and training for the matched Student-v2 control arm."
+code_commit = "7f99f3a"
+config = "configs/model_flow_tiny.toml"
+artifact_dir = "artifacts/STUDENT-V2-ALL10-DEMO-PREFLIGHT-S7-001"
+seeds = [7]
+
+[[experiments]]
+id = "STUDENT-V2-ALL10-DISTILL-BAL100-PREFLIGHT-S7-001"
+status = "complete"
+purpose = "Validate matched all-ten-task demonstration and balanced-teacher training for Student-v2."
+code_commit = "7f99f3a"
+config = "configs/model_flow_tiny.toml"
+artifact_dir = "artifacts/STUDENT-V2-ALL10-DISTILL-BAL100-PREFLIGHT-S7-001"
+seeds = [7]
+
+[[experiments]]
+id = "STUDENT-V2-ALL10-DEMO-10K-S7-001"
+status = "complete"
+purpose = "Train the matched all-ten-task demonstration-only Student-v2 control for 10K continuation steps."
+code_commit = "7f99f3a"
+config = "configs/model_flow_tiny.toml"
+artifact_dir = "artifacts/STUDENT-V2-ALL10-DEMO-10K-S7-001"
+seeds = [7]
+
+[[experiments]]
+id = "STUDENT-V2-ALL10-DISTILL-BAL100-10K-S7-001"
+status = "complete"
+purpose = "Train the matched all-ten-task Student-v2 arm with source- and teacher-task-balanced distillation for 10K steps."
+code_commit = "7f99f3a"
+config = "configs/model_flow_tiny.toml"
+artifact_dir = "artifacts/STUDENT-V2-ALL10-DISTILL-BAL100-10K-S7-001"
+seeds = [7]
+
+[[experiments]]
+id = "STUDENT-V2-ALL10-DEMO-BESTGEN-S7-R5-PAIRED10-001"
+status = "complete"
+purpose = "Gate the demonstration-only Student-v2 generation-best checkpoint on one fresh initial state per Spatial task."
+code_commit = "7f99f3a"
+config = "docs/evaluation_protocol.md"
+artifact_dir = "results/STUDENT-V2-ALL10-DEMO-BESTGEN-S7-R5-PAIRED10-001"
+seeds = [7]
+
+[[experiments]]
+id = "STUDENT-V2-ALL10-DISTILL-BESTGEN-S7-R5-PAIRED10-001"
+status = "complete"
+purpose = "Gate the distilled Student-v2 generation-best checkpoint on the same fresh ten-task initial-state panel."
+code_commit = "7f99f3a"
+config = "docs/evaluation_protocol.md"
+artifact_dir = "results/STUDENT-V2-ALL10-DISTILL-BESTGEN-S7-R5-PAIRED10-001"
+seeds = [7]
+
+[[experiments]]
+id = "STUDENT-V2-ALL10-SNAPSHOT-GATE-S7-R5-PAIRED50-001"
+status = "complete"
+purpose = "Screen earlier matched Student-v2 snapshots after both generation-best checkpoints underperform Student-v1 on the fresh ten-task gate."
+code_commit = "7f99f3a"
+config = "docs/evaluation_protocol.md"
+artifact_dir = "results"
+seeds = [7]
+
+[[experiments]]
+id = "STUDENT-V2-ALL10-DISTILL-10K-S7-R5-DEV90-INIT21-29-001"
+status = "complete"
+purpose = "Validate the selected distilled 10K snapshot on nine previously unused initial states per Spatial task before any expanded formal comparison."
+code_commit = "7f99f3a"
+config = "docs/evaluation_protocol.md"
+artifact_dir = "results/STUDENT-V2-ALL10-DISTILL-10K-S7-R5-DEV90-INIT21-29-001"
+seeds = [7]
+
+[[experiments]]
+id = "STUDENT-V2-ALL10-DISTILL-10K-S7-R5-500-001"
+status = "complete"
+purpose = "Run the frozen distilled Student-v2 10K checkpoint on the complete 500-episode Spatial formal protocol after passing the untouched-state validation gate."
+code_commit = "7f99f3a"
+config = "docs/evaluation_protocol.md"
+artifact_dir = "results/STUDENT-V2-ALL10-DISTILL-10K-S7-R5-500-001"
+seeds = [7]
+
+[[experiments]]
+id = "STUDENT-V2-ALL10-DISTILL-10K-S7-R5-FAILURE-AUDIT-500-001"
+status = "complete"
+purpose = "Audit all 500 formal Student-v2 traces with conservative motion and gripper proxy diagnostics and index representative failure videos."
+code_commit = "49f0285"
+config = "reports/2026-08-11_student_v3_technical_path.md"
+artifact_dir = "results/STUDENT-V2-ALL10-DISTILL-10K-S7-R5-500-001/failure_analysis.json"
+seeds = [7]
+
+[[experiments]]
+id = "STUDENT-V2-ALL10-DISTILL-10K-S7-R5-GRIPPER-DEBOUNCE-DIAG-PAIRED60-001"
+status = "complete"
+purpose = "Test debounce 3 and 5 on a declared 30-pair diagnostic panel enriched for gripper-switching failures while retaining baseline-success guardrails."
+code_commit = "49f0285"
+config = "docs/evaluation_protocol.md"
+artifact_dir = "results/STUDENT-V2-ALL10-DISTILL-10K-S7-R5-GRIPPER-DEBOUNCE-DIAG-001"
+seeds = [7]
+
+[[experiments]]
+id = "STUDENT-V2-DEMO-INIT-RICH-TRACE-T269-D15-001"
+status = "complete"
+purpose = "Generate schema-v3 Student-v2 trajectories from five official demonstration starts on each correction-priority task 2, 6, and 9 without reusing formal evaluation states."
+code_commit = "e84ef8f"
+config = "reports/2026-08-11_student_v3_technical_path.md"
+artifact_dir = "results/STUDENT-V2-DEMO-INIT-RICH-TRACE-T269-D15-001"
+seeds = [2000]
+
+[[experiments]]
+id = "TEACHER-CORRECTION-T2-D1-SMOKE-001"
+status = "complete"
+purpose = "Gate correction collection by restoring one hashed task-2 demonstration failure seed and requiring a complete successful official-teacher recovery artifact with zero simulator-state restore error."
+code_commit = "f1e25a7"
+config = "reports/2026-08-11_student_v3_technical_path.md"
+artifact_dir = "artifacts/TEACHER-CORRECTION-T2-D1-SMOKE-001"
+seeds = [2001]
+
+[[experiments]]
+id = "TEACHER-CORRECTION-T2-D1-PREROLL30-SMOKE-002"
+status = "complete"
+purpose = "Retry the task-2 teacher correction gate from 30 steps before the first dense gripper-switch burst after the five-step pre-roll seed restored exactly but the teacher failed 0/1."
+code_commit = "f1e25a7"
+config = "reports/2026-08-11_student_v3_technical_path.md"
+artifact_dir = "artifacts/TEACHER-CORRECTION-T2-D1-PREROLL30-SMOKE-002"
+seeds = [2001]
+
+[[experiments]]
+id = "TEACHER-CORRECTION-T2-D1-STEP0-DIAG-003"
+status = "complete"
+purpose = "Diagnose whether correction failure comes from mid-trajectory takeover or the demonstration seed by running the official teacher from source trace step zero after the standard ten settling actions."
+code_commit = "f1e25a7"
+config = "reports/2026-08-11_student_v3_technical_path.md"
+artifact_dir = "artifacts/TEACHER-CORRECTION-T2-D1-STEP0-DIAG-003"
+seeds = [2001]
+
+[[experiments]]
+id = "TEACHER-CORRECTION-T2-D1-STEP32-DIAG-004"
+status = "complete"
+purpose = "Binary-search the recoverable takeover boundary between the successful step-zero teacher control and the failed step-64 takeover."
+code_commit = "11157ff"
+config = "reports/2026-08-11_student_v3_technical_path.md"
+artifact_dir = "artifacts/TEACHER-CORRECTION-T2-D1-STEP32-DIAG-004"
+seeds = [2001]
+
+[[experiments]]
+id = "TEACHER-CORRECTION-T2-D1-STEP48-DIAG-005"
+status = "complete"
+purpose = "Continue the binary search for the recoverable teacher-takeover boundary between successful step 32 and failed step 64."
+code_commit = "eb08331"
+config = "reports/2026-08-11_student_v3_technical_path.md"
+artifact_dir = "artifacts/TEACHER-CORRECTION-T2-D1-STEP48-DIAG-005"
+seeds = [2001]
+
+[[experiments]]
+id = "TEACHER-CORRECTION-T2-D1-STEP56-DIAG-006"
+status = "complete"
+purpose = "Continue the binary search for the recoverable teacher-takeover boundary between successful step 48 and failed step 64."
+code_commit = "63d1ac3"
+config = "reports/2026-08-11_student_v3_technical_path.md"
+artifact_dir = "artifacts/TEACHER-CORRECTION-T2-D1-STEP56-DIAG-006"
+seeds = [2001]
+
+[[experiments]]
+id = "TEACHER-CORRECTION-T6T9-PREROLL40-GATE-007"
+status = "complete"
+purpose = "Validate the conservative forty-step pre-burst teacher takeover rule on one non-evaluation failure seed from each of tasks 6 and 9 before expanding correction collection."
+code_commit = "05a5ebb"
+config = "reports/2026-08-11_student_v3_technical_path.md"
+artifact_dir = "artifacts/TEACHER-CORRECTION-T6T9-PREROLL40-GATE-007"
+seeds = [2000, 2003]
+
+[[experiments]]
+id = "TEACHER-CORRECTION-T6T9-PREROLL40-BATCH-008"
+status = "complete"
+purpose = "Collect the remaining six non-evaluation task-6 and task-9 teacher corrections selected forty steps before the first dense gripper-switch burst, retaining only successful atomic artifacts."
+code_commit = "c11b439"
+config = "reports/2026-08-11_student_v3_technical_path.md"
+artifact_dir = "artifacts/TEACHER-CORRECTION-T6T9-PREROLL40-BATCH-008"
+seeds = [2000, 2001, 2002, 2003, 2004]
+
+[[experiments]]
+id = "TEACHER-CORRECTION-DATASET-V1-SUCCESS8-009"
+status = "complete"
+purpose = "Validate and compact eight unique successful task-2, task-6, and task-9 correction trajectories into the training NPZ contract while excluding every teacher failure."
+code_commit = "e0287c6"
+config = "reports/2026-08-11_student_v3_technical_path.md"
+artifact_dir = "artifacts/TEACHER-CORRECTION-DATASET-V1-SUCCESS8-009"
+seeds = [2000, 2001, 2002, 2003, 2004]
+
+[[experiments]]
+id = "STUDENT-V3-CORRECTION-SUCCESS8-PREFLIGHT-S7-010"
+status = "complete"
+purpose = "Run a 100-step three-source training preflight initialized from Student-v2 with exact 50 percent demonstrations, 25 percent balanced teacher data, and 25 percent successful corrections."
+code_commit = "3dc4648"
+config = "configs/model_flow_tiny.toml"
+artifact_dir = "artifacts/STUDENT-V3-CORRECTION-SUCCESS8-PREFLIGHT-S7-010"
+seeds = [7]
+
+[[experiments]]
+id = "STUDENT-V2-DEMO-INIT-RICH-TRACE-T269-D60-011"
+status = "complete"
+purpose = "Generate sixty new schema-v3 Student-v2 correction-source rollouts from official demonstration indices 5 through 24 on priority tasks 2, 6, and 9 without touching formal evaluation states."
+code_commit = "44aeb74"
+config = "configs/model_flow_tiny.toml"
+artifact_dir = "results/STUDENT-V2-DEMO-INIT-RICH-TRACE-T269-D60-011"
+seeds = [2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
+
+[[experiments]]
+id = "TEACHER-CORRECTION-T269-D60-PREROLL40-BATCH-012"
+status = "complete"
+purpose = "Collect the 38 auditable non-evaluation task-2, task-6, and task-9 teacher corrections selected by the validated forty-step pre-burst rule in resumable six-episode batches; quarantine four fallback selections and exclude every teacher failure from training data."
+code_commit = "6230c44"
+config = "reports/2026-08-11_student_v3_technical_path.md"
+artifact_dir = "artifacts/TEACHER-CORRECTION-T269-D60-PREROLL40-BATCH-012"
+seeds = [2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
+
+[[experiments]]
+id = "TEACHER-CORRECTION-DATASET-V2-SUCCESS39-013"
+status = "complete"
+purpose = "Merge and validate all thirty-nine unique successful task-2, task-6, and task-9 correction trajectories while excluding seven teacher failures, two infrastructure retry attempts, and four quarantined fallback candidates."
+code_commit = "c9fd074"
+config = "reports/2026-08-11_student_v3_handoff.md"
+artifact_dir = "artifacts/TEACHER-CORRECTION-DATASET-V2-SUCCESS39-013"
+seeds = [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
+
+[[experiments]]
+id = "STUDENT-V3-CORRECTION-SUCCESS39-PREFLIGHT-S7-014"
+status = "complete"
+purpose = "Run a 100-step three-source Student-v3 preflight from the Student-v2 best generation checkpoint using exact 50 percent demonstrations, 25 percent balanced teacher data, and 25 percent of all thirty-nine successful corrections."
+code_commit = "b4ef2ae"
+config = "configs/model_flow_tiny.toml"
+artifact_dir = "artifacts/STUDENT-V3-CORRECTION-SUCCESS39-PREFLIGHT-S7-014"
+seeds = [7]
+
+[[experiments]]
+id = "STUDENT-V3-CORRECTION-SUCCESS39-10K-S7-015"
+status = "complete"
+purpose = "Train Student-v3 for ten thousand steps from the Student-v2 best generation checkpoint using exact 50 percent demonstrations, 25 percent balanced teacher data, and 25 percent of all thirty-nine successful corrections; retain 2K, 5K, and 10K snapshots."
+code_commit = "b4ef2ae"
+config = "configs/model_flow_tiny.toml"
+artifact_dir = "artifacts/STUDENT-V3-CORRECTION-SUCCESS39-10K-S7-015"
+seeds = [7]
+
+[[experiments]]
+id = "STUDENT-V3-SUCCESS39-CHECKPOINT-GATE-S7-R5-DEV400-016"
+status = "complete"
+purpose = "Compare Student-v3 continuation steps 2K, 5K, best-generation step 9K, and 10K on the frozen ten-task development panel with initial-state indices 10 through 19, then pair outcomes against the existing Student-v2 matrix."
+code_commit = "0d3a300"
+config = "reports/2026-08-10_checkpoint_gate.md"
+artifact_dir = "results/STUDENT-V3-SUCCESS39-CHECKPOINT-GATE-S7-R5-DEV400-016"
+seeds = [7]
+
+[[experiments]]
+id = "STUDENT-V3-SUCCESS39-10K-S7-R5-DEV90-INIT21-29-017"
+status = "complete"
+purpose = "Validate the frozen Student-v3 10K checkpoint on ninety states not used for Student-v3 checkpoint selection; advance only if it does not regress below the existing Student-v2 result on the same panel."
+code_commit = "5c9027c"
+config = "reports/2026-08-13_student_v3_checkpoint_gate.md"
+artifact_dir = "results/STUDENT-V3-SUCCESS39-10K-S7-R5-DEV90-INIT21-29-017"
+seeds = [7]
+
+[[experiments]]
+id = "STUDENT-V3-SUCCESS39-10K-S7-R5-500-018"
+status = "complete"
+purpose = "Formally evaluate the frozen Student-v3 10K checkpoint over five hundred LIBERO Spatial episodes after the untouched validation gate passed; reuse only the 190 exact episode identities already completed under the identical protocol."
+code_commit = "6e9691f"
+config = "reports/2026-08-13_student_v3_checkpoint_gate.md"
+artifact_dir = "results/STUDENT-V3-SUCCESS39-10K-S7-R5-500-018"
+seeds = [7]

@@ -1,0 +1,44 @@
+schema_version = 1
+name = "ar_tiny_libero"
+backend = "pytorch"
+compute_dtype = "bfloat16"
+loss_dtype = "float32"
+
+[observation]
+image_keys = ["base_0_rgb", "wrist_0_rgb"]
+image_height = 224
+image_width = 224
+image_channels = 3
+max_prompt_tokens = 64
+state_dim = 7
+
+[action]
+dim = 7
+horizon = 10
+
+[backbone]
+model_id = "google/paligemma-3b-pt-224"
+revision = "35e4f46485b4d07967e7e9935bc3786aad50687c"
+output_dim = 2048
+frozen = true
+license_acceptance_required = true
+
+[action_expert]
+model_dim = 512
+num_layers = 8
+num_heads = 8
+head_dim = 64
+ffn_dim = 2048
+time_embedding_dim = 128
+position_embedding = "learned"
+dropout = 0.0
+activation = "swiglu"
+
+[autoregressive]
+representation = "continuous_diagonal_gaussian"
+teacher_forcing = "shifted_previous_action"
+generation = "deterministic_mean"
+log_scale_min = -3.0
+log_scale_max = 2.0
+mean_mse_weight = 1.0
+log_scale_regularization = 0.01
