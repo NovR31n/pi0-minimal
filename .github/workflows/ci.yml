@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  cpu-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Install uv and Python
+        uses: astral-sh/setup-uv@ae62891fec2bb8e7d6c99fc78c9fec3a63790f8d # v10.0.0
+        with:
+          python-version: "3.11"
+          enable-cache: true
+
+      - name: Check the lockfile
+        run: uv lock --check
+
+      - name: Install CPU test environment
+        run: |
+          uv venv --python 3.11
+          uv pip install torch==2.7.1 --index-url https://download.pytorch.org/whl/cpu
+          uv pip install --editable ".[dev]"
+
+      - name: Lint
+        run: .venv/bin/ruff check .
+
+      - name: Test
+        run: .venv/bin/python -m pytest -q

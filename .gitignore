@@ -21,6 +21,8 @@ data/
 src/pi0_minimal/data/__pycache__/
 results/*
 !results/README.md
+!results/student_v3_formal_500_summary.json
+!results/student_v3_per_task.csv
 wandb/
 *.log
 *.mp4

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="470" viewBox="0 0 900 470" role="img" aria-labelledby="title desc">
+  <title id="title">LIBERO Spatial student policy progression</title>
+  <desc id="desc">Success rates rose from 21.6 percent for the direct student to 63.8 percent for Student-v3.</desc>
+  <style>
+    .title { font: 700 24px system-ui, sans-serif; fill: #172033; }
+    .subtitle { font: 14px system-ui, sans-serif; fill: #64748b; }
+    .axis { font: 12px system-ui, sans-serif; fill: #64748b; }
+    .label { font: 600 14px system-ui, sans-serif; fill: #334155; }
+    .value { font: 700 18px system-ui, sans-serif; fill: #172033; }
+    .grid { stroke: #dbe3ee; stroke-width: 1; }
+  </style>
+  <rect width="900" height="470" rx="18" fill="#f8fafc"/>
+  <text x="48" y="45" class="title">Student policy progression</text>
+  <text x="48" y="70" class="subtitle">LIBERO Spatial · 500 closed-loop episodes per policy · higher is better</text>
+
+  <g aria-hidden="true">
+    <line x1="75" y1="370" x2="865" y2="370" class="grid"/>
+    <line x1="75" y1="290" x2="865" y2="290" class="grid"/>
+    <line x1="75" y1="210" x2="865" y2="210" class="grid"/>
+    <line x1="75" y1="130" x2="865" y2="130" class="grid"/>
+    <line x1="75" y1="90" x2="865" y2="90" class="grid"/>
+    <text x="63" y="374" text-anchor="end" class="axis">0%</text>
+    <text x="63" y="294" text-anchor="end" class="axis">20%</text>
+    <text x="63" y="214" text-anchor="end" class="axis">40%</text>
+    <text x="63" y="134" text-anchor="end" class="axis">60%</text>
+    <text x="63" y="94" text-anchor="end" class="axis">70%</text>
+  </g>
+
+  <g>
+    <rect x="115" y="283.6" width="125" height="86.4" rx="8" fill="#94a3b8"/>
+    <text x="177.5" y="273" text-anchor="middle" class="value">21.6%</text>
+    <text x="177.5" y="399" text-anchor="middle" class="label">Direct student</text>
+    <text x="177.5" y="420" text-anchor="middle" class="axis">108 / 500</text>
+  </g>
+  <g>
+    <rect x="315" y="198.8" width="125" height="171.2" rx="8" fill="#60a5fa"/>
+    <text x="377.5" y="188" text-anchor="middle" class="value">42.8%</text>
+    <text x="377.5" y="399" text-anchor="middle" class="label">Student-v1</text>
+    <text x="377.5" y="420" text-anchor="middle" class="axis">214 / 500</text>
+  </g>
+  <g>
+    <rect x="515" y="170.8" width="125" height="199.2" rx="8" fill="#3b82f6"/>
+    <text x="577.5" y="160" text-anchor="middle" class="value">49.8%</text>
+    <text x="577.5" y="399" text-anchor="middle" class="label">Student-v2</text>
+    <text x="577.5" y="420" text-anchor="middle" class="axis">249 / 500</text>
+  </g>
+  <g>
+    <rect x="715" y="114.8" width="125" height="255.2" rx="8" fill="#14b8a6"/>
+    <text x="777.5" y="104" text-anchor="middle" class="value">63.8%</text>
+    <text x="777.5" y="399" text-anchor="middle" class="label">Student-v3</text>
+    <text x="777.5" y="420" text-anchor="middle" class="axis">319 / 500</text>
+  </g>
+  <text x="777.5" y="451" text-anchor="middle" class="axis" fill="#0f766e">+14.0 points vs v2</text>
+</svg>

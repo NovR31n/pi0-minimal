@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "experiment_id": "STUDENT-V3-SUCCESS39-10K-S7-R5-500-018",
+  "benchmark": {
+    "name": "LIBERO Spatial",
+    "task_ids": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+    "initial_state_indices": {
+      "start": 0,
+      "stop_inclusive": 49
+    },
+    "episodes_per_task": 50,
+    "episodes_total": 500
+  },
+  "protocol": {
+    "training_seed": 7,
+    "evaluation_seed_offset": 1000,
+    "max_steps": 220,
+    "wait_steps": 10,
+    "replan_steps": 5,
+    "observation_resolution": 256,
+    "device": "cuda"
+  },
+  "student_progression": [
+    {
+      "policy": "direct_video_compact_student",
+      "successes": 108,
+      "episodes": 500,
+      "success_rate": 0.216
+    },
+    {
+      "policy": "student_v1_balanced_teacher_distillation",
+      "successes": 214,
+      "episodes": 500,
+      "success_rate": 0.428
+    },
+    {
+      "policy": "student_v2_all_task_balanced_distillation",
+      "successes": 249,
+      "episodes": 500,
+      "success_rate": 0.498
+    },
+    {
+      "policy": "student_v3_recovery_data_continuation",
+      "successes": 319,
+      "episodes": 500,
+      "success_rate": 0.638
+    }
+  ],
+  "student_v3": {
+    "checkpoint_step": 10000,
+    "successes": 319,
+    "failures": 181,
+    "episodes": 500,
+    "success_rate": 0.638,
+    "wilson_95_ci": {
+      "lower": 0.595,
+      "upper": 0.679
+    },
+    "exceptions": 0
+  },
+  "paired_comparison_to_student_v2": {
+    "student_v2_successes": 249,
+    "student_v2_success_rate": 0.498,
+    "success_gain": 70,
+    "percentage_point_gain": 14.0,
+    "both_success": 196,
+    "student_v3_only": 123,
+    "student_v2_only": 53,
+    "both_fail": 128,
+    "two_sided_exact_mcnemar_p": 1.371e-7
+  },
+  "per_task_csv": "results/student_v3_per_task.csv",
+  "provenance": {
+    "formal_report": "reports/2026-08-13_student_v3_formal_500.md",
+    "checkpoint_gate_report": "reports/2026-08-13_student_v3_checkpoint_gate.md",
+    "raw_rollouts_distributed": false,
+    "note": "Licensed datasets, checkpoints, full traces, and videos are retained outside Git."
+  }
+}

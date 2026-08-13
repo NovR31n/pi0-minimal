@@ -3,6 +3,12 @@ from __future__ import annotations
 from typing import Any
 
 import pytest
+
+pytest.importorskip(
+    "openpi_client",
+    reason="the official OpenPI client is an external rollout dependency",
+)
+
 from openpi_client import msgpack_numpy
 
 from pi0_minimal.teacher_client import LongInferenceWebsocketClientPolicy

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="580" viewBox="0 0 1100 580" role="img" aria-labelledby="title desc">
+  <title id="title">Student-v2 and Student-v3 success rates by LIBERO Spatial task</title>
+  <desc id="desc">Student-v3 improves eight tasks and regresses on tasks seven and eight, with the largest gains on tasks two, six, and nine.</desc>
+  <style>
+    .title { font: 700 24px system-ui, sans-serif; fill: #172033; }
+    .subtitle { font: 14px system-ui, sans-serif; fill: #64748b; }
+    .axis { font: 12px system-ui, sans-serif; fill: #64748b; }
+    .task { font: 600 13px system-ui, sans-serif; fill: #334155; }
+    .value { font: 600 11px system-ui, sans-serif; fill: #334155; }
+    .grid { stroke: #dbe3ee; stroke-width: 1; }
+  </style>
+  <rect width="1100" height="580" rx="18" fill="#f8fafc"/>
+  <text x="48" y="45" class="title">Per-task comparison</text>
+  <text x="48" y="70" class="subtitle">LIBERO Spatial · 50 episodes per task · paired initial states</text>
+  <rect x="790" y="32" width="14" height="14" rx="3" fill="#3b82f6"/><text x="812" y="44" class="axis">Student-v2</text>
+  <rect x="900" y="32" width="14" height="14" rx="3" fill="#14b8a6"/><text x="922" y="44" class="axis">Student-v3</text>
+
+  <g aria-hidden="true">
+    <line x1="75" y1="450" x2="1050" y2="450" class="grid"/>
+    <line x1="75" y1="360" x2="1050" y2="360" class="grid"/>
+    <line x1="75" y1="270" x2="1050" y2="270" class="grid"/>
+    <line x1="75" y1="180" x2="1050" y2="180" class="grid"/>
+    <line x1="75" y1="90" x2="1050" y2="90" class="grid"/>
+    <text x="63" y="454" text-anchor="end" class="axis">0%</text>
+    <text x="63" y="364" text-anchor="end" class="axis">25%</text>
+    <text x="63" y="274" text-anchor="end" class="axis">50%</text>
+    <text x="63" y="184" text-anchor="end" class="axis">75%</text>
+    <text x="63" y="94" text-anchor="end" class="axis">100%</text>
+  </g>
+
+  <g><rect x="105" y="219.6" width="28" height="230.4" rx="4" fill="#3b82f6"/><rect x="137" y="190.8" width="28" height="259.2" rx="4" fill="#14b8a6"/><text x="135" y="479" text-anchor="middle" class="task">0</text><text x="151" y="183" text-anchor="middle" class="value">72</text></g>
+  <g><rect x="200" y="313.2" width="28" height="136.8" rx="4" fill="#3b82f6"/><rect x="232" y="226.8" width="28" height="223.2" rx="4" fill="#14b8a6"/><text x="230" y="479" text-anchor="middle" class="task">1</text><text x="246" y="219" text-anchor="middle" class="value">62</text></g>
+  <g><rect x="295" y="313.2" width="28" height="136.8" rx="4" fill="#3b82f6"/><rect x="327" y="176.4" width="28" height="273.6" rx="4" fill="#14b8a6"/><text x="325" y="479" text-anchor="middle" class="task">2</text><text x="341" y="169" text-anchor="middle" class="value">76</text></g>
+  <g><rect x="390" y="183.6" width="28" height="266.4" rx="4" fill="#3b82f6"/><rect x="422" y="133.2" width="28" height="316.8" rx="4" fill="#14b8a6"/><text x="420" y="479" text-anchor="middle" class="task">3</text><text x="436" y="126" text-anchor="middle" class="value">88</text></g>
+  <g><rect x="485" y="270" width="28" height="180" rx="4" fill="#3b82f6"/><rect x="517" y="255.6" width="28" height="194.4" rx="4" fill="#14b8a6"/><text x="515" y="479" text-anchor="middle" class="task">4</text><text x="531" y="248" text-anchor="middle" class="value">54</text></g>
+  <g><rect x="580" y="262.8" width="28" height="187.2" rx="4" fill="#3b82f6"/><rect x="612" y="241.2" width="28" height="208.8" rx="4" fill="#14b8a6"/><text x="610" y="479" text-anchor="middle" class="task">5</text><text x="626" y="234" text-anchor="middle" class="value">58</text></g>
+  <g><rect x="675" y="306" width="28" height="144" rx="4" fill="#3b82f6"/><rect x="707" y="183.6" width="28" height="266.4" rx="4" fill="#14b8a6"/><text x="705" y="479" text-anchor="middle" class="task">6</text><text x="721" y="176" text-anchor="middle" class="value">74</text></g>
+  <g><rect x="770" y="241.2" width="28" height="208.8" rx="4" fill="#3b82f6"/><rect x="802" y="306" width="28" height="144" rx="4" fill="#f97316"/><text x="800" y="479" text-anchor="middle" class="task">7</text><text x="816" y="299" text-anchor="middle" class="value">40</text></g>
+  <g><rect x="865" y="255.6" width="28" height="194.4" rx="4" fill="#3b82f6"/><rect x="897" y="262.8" width="28" height="187.2" rx="4" fill="#f97316"/><text x="895" y="479" text-anchor="middle" class="task">8</text><text x="911" y="255" text-anchor="middle" class="value">52</text></g>
+  <g><rect x="960" y="342" width="28" height="108" rx="4" fill="#3b82f6"/><rect x="992" y="226.8" width="28" height="223.2" rx="4" fill="#14b8a6"/><text x="990" y="479" text-anchor="middle" class="task">9</text><text x="1006" y="219" text-anchor="middle" class="value">62</text></g>
+
+  <text x="562" y="515" text-anchor="middle" class="axis">LIBERO Spatial task ID</text>
+  <text x="562" y="545" text-anchor="middle" class="subtitle">V3 gains: tasks 0–6 and 9 · regressions highlighted: task 7 (−18 points), task 8 (−2 points)</text>
+</svg>
